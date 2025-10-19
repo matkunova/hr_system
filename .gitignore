@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+
+db.sqlite3
+*.log
+.env
+
+.venv/
+
+.vscode/
+.idea/
+.DS_Store
+
+*.xlsx
+!sample_import.xlsx

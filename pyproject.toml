@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "hr-system"
+version = "0.1.0"
+description = "An internal system for the company's HR department that allows for employee record keeping: adding new employees, viewing the list, updating data, and managing statuses."
+authors = ["Pauline Titova <polinamatkunova@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "==4.2.*"
+djangorestframework = "^3.16.1"
+openpyxl = "^3.1.5"
+django-filter = "24.3"
+django-extensions = "^4.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-django = "^4.11.1"
+factory-boy = "^3.3.3"
+black = "^25.9.0"
+flake8 = "^7.3.0"
+isort = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "hr_system.settings"
+testpaths = ["workers"]
+python_files = ["test_*.py"]
+addopts = "-v --ds=hr_system.settings"
